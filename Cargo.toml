@@ -1,0 +1,47 @@
+[package]
+name = "ipfs-kad-example"
+version = "0.1.0"
+edition = "2021"
+publish = false
+license = "MIT"
+
+[package.metadata.release]
+release = false
+
+[dependencies]
+libp2p-swarm-derive = "0.35.0"
+tokio = { workspace = true, features = ["rt-multi-thread", "macros", "process"] }
+async-trait = "0.1"
+clap = { version = "4.5.6", features = ["derive"] }
+env_logger = "0.10"
+futures = { workspace = true }
+anyhow = "1.0.86"
+igd = "0.12.1"
+cid = "0.5.1" # Use a version compatible with the ipfs crat
+sha2 = { version ="0.10.8", features = ["oid"] }
+rand = "0.8" # Latest version of the rand crate
+rsa = "0.9.7"  # Latest version of the rsa crate
+bs58 = "0.5"
+hex = "0.4" # Latest version of the hex crate
+multihash = "0.11.4" # Update to the latest compatible version
+webrtc = "0.11.0"
+zip = "0.6"
+axum = { version = "0.6", features = ["macros"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+base64 = "0.21.0"
+log = "0.4"         # Logging facade used by env_logger
+stun-client = "0.1.4"
+util = { package = "webrtc-util", version = "0.9.0", default-features = false, features = ["conn", "vnet"] }
+turn = "0.8.0"
+ipfs = { path = "/home/umut/projects/libraries/rust-ipfs" }
+ipfs-api = "0.17.0"
+libp2p = { path = "../../libp2p", features = [ "macros","full","tokio", "dns", "kad", "noise", "tcp", "yamux", "rsa", "gossipsub","mdns","request-response", "cbor", "relay", "autonat","websocket"] }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true, features = ["env-filter"] }
+
+
+
+[lints]
+workspace = true
+
